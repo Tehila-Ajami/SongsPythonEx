@@ -43,7 +43,7 @@ def test_add_not_exists_friend(step1):
     user_name = "main user name"
     user_password = "main user pass"
     # get_add_user(user_name, user_password)
-    logging.info(f"step3 - add un exists user name as friend to user {user_name}")
+    logging.info(f"step3 - add not exists user name as friend to user {user_name}")
     res = add_friend("blala", user_name, user_password)
     not_exists_user_error = str(f"the user {user_name} does not exist" in str(res.content))
     logging.info("validate add not exists user as friend return error succeeded " + not_exists_user_error + " " + str(
@@ -64,7 +64,7 @@ def test_add_friend(step1):
     add_friend(f_user_name, user_name, user_password)
     logging.info(f"step4 - get exists user {f_user_name} details")
     res_get_user = get_user(user_name)
-    user_friend_list = res_get_user.json().get("data").get("friends")
+    user_friend_list = res_get_user.json()["data"]["friends"]
     logging.info("validate add user as friend succeeded " + f_user_name in
                  user_friend_list + f"user {user_name} friends list")
     logging.info(' '.join(user_friend_list))
