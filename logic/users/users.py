@@ -1,6 +1,10 @@
 from infra.restUtils import *
 
 
+def get_server_url():
+    return 'http://127.0.0.1:3002/'
+
+
 def validate_user_after_add(user_name, response):
     ex_user = {
         "friends": [],

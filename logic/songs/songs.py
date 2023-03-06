@@ -1,6 +1,10 @@
 from infra.restUtils import *
 
 
+def get_server_url():
+    return 'http://127.0.0.1:3002/'
+
+
 def add_song(song_genre, song_performer, song_title, song_year):
     obj_song = {
         "song_genre": song_genre,

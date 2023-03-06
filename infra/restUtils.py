@@ -6,11 +6,7 @@ def validate_response(response):
     if response.ok:
         logging.info(f"request url {response.url} succeed with status code {response.status_code}")
     else:
-        logging.error(f"request failed with status code {response.status_code} failure reason {response.text}")
-
-
-def get_server_url():
-    return 'http://127.0.0.1:3002/'
+        logging.info(f"request failed with status code {response.status_code} failure reason {response}")
 
 
 def get_req(req_url, args):
